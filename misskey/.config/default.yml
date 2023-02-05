@@ -41,8 +41,8 @@ db:
   db: misskey
 
   # Auth
-  user: example-misskey-user
-  pass: example-misskey-pass
+  user: misskey
+  pass: misskey
 
   # Whether disable Caching queries
   #disableCache: true
