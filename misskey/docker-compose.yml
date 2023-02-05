@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  web:
+    restart: always
+    image: misskey/misskey:latest
+    container_name: misskey_web
+    links:
+      - db
+      - redis
+    ports:
+      - "3000:3000"
+    networks:
+      - internal_network
+      - external_network
+    volumes:
+      - ./files:/misskey/files
+      - ./.config/default.yml:/misskey/.config/default.yml:ro
+
+  redis:
+    restart: always
+    image: redis:latest
+    container_name: misskey_redis
+    networks:
+      - internal_network
+    volumes:
+      - ./redis:/data
+
+  db:
+    restart: always
+    image: postgres:latest
+    container_name: misskey_db
+    networks:
+      - internal_network
+    env_file:
+      - ./.config/docker.env
+    volumes:
+      - ./db:/var/lib/postgresql/data
+
+networks:
+  internal_network:
+    internal: true
+  external_network:
