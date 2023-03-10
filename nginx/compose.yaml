@@ -3,6 +3,8 @@ services:
   nginx:
     image: nginx:latest
     restart: unless-stopped
+    ports:
+      - 49190:80
     volumes:
       - ./conf:/etc/nginx/conf.d
       - ./src:/var/www/html
