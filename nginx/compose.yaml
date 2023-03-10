@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  nginx:
+    image: nginx:latest
+    container_name: ponkan.qqey.net
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/conf:/etc/nginx/conf.d
