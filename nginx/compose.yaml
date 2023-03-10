@@ -1,9 +1,8 @@
-version: "3.8"
+version: '3.9'
 services:
   nginx:
     image: nginx:latest
-    container_name: ponkan.qqey.net
-    ports:
-      - "80:80"
+    restart: unless-stopped
     volumes:
-      - ./nginx/conf:/etc/nginx/conf.d
+      - ./conf:/etc/nginx/conf.d
+      - ./src:/var/www/html
