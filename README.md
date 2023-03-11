@@ -1,6 +1,6 @@
-# qqey/Infrastructure
+# qqey/ponkan
 
 ## このリポジトリについて
 
-qqey/Infrastructureは、ponkanやiyokanにインフラリソースを提供することを目的としたリポジトリです。
+qqey/ponkanは、ponkanにインフラリソースを提供することを目的としたリポジトリです。
 
