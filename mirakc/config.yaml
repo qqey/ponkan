@@ -42,3 +42,5 @@ tuners:
     command: >-
       dvbv5-zap -a 0 -c ./config/dvbconf-for-isdb/conf/dvbv5_channels_isdbt.conf
       -r -P <channel>
+epg:
+  cache-dir: /var/lib/mirakc/epg

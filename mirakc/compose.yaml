@@ -1,3 +1,4 @@
+version: "3.8"
 services:
   mirakc:
     image: mirakc/mirakc:alpine
@@ -7,9 +8,14 @@ services:
     ports:
       - 40772:40772
     volumes:
+      - mirakc-epg:/var/lib/mirakc/epg
       - ./config.yaml:/etc/mirakc/config.yml:ro
     environment:
       TZ: Asia/Tokyo
       RUST_LOG: info
     devices:
       - /dev/dvb/adapter0/dvr0
+volumes:
+  mirakc-epg:
+    name: mirakc_epg
+    driver: local
