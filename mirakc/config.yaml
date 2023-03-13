@@ -39,3 +39,9 @@ channels:
   - name: ＮＨＫ総合・東京
     type: GR
     channel: '27'
+tuners:
+  - name: adapter0
+    types: [GR]
+    command: >-
+      dvbv5-zap -a 0 -c ./config/dvbconf-for-isdb/conf/dvbv5_channels_isdbt.conf
+      -r -P <channel>

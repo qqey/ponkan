@@ -11,3 +11,5 @@ services:
     environment:
       TZ: Asia/Tokyo
       RUST_LOG: info
+    devices:
+      - /dev/dvb/adapter0/dvr0
