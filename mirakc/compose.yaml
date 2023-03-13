@@ -1,0 +1,13 @@
+services:
+  mirakc:
+    image: mirakc/mirakc:alpine
+    container_name: mirakc
+    init: true
+    restart: unless-stopped
+    ports:
+      - 40772:40772
+    volumes:
+      - ./config.yaml:/etc/mirakc/config.yml:ro
+    environment:
+      TZ: Asia/Tokyo
+      RUST_LOG: info
