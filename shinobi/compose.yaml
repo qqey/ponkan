@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  shinobi:
+    image: registry.gitlab.com/shinobi-systems/shinobi:dev
+    container_name: shinobi
+    ports:
+       - 49162:8080
+    volumes:
+       - ${PWD}/Shinobi/config:/config
+       - ${PWD}/Shinobi/customAutoLoad:/home/Shinobi/libs/customAutoLoad
+       - ${PWD}/Shinobi/database:/var/lib/mysql
+       - ${PWD}/Shinobi/videos:/home/Shinobi/videos
+       - ${PWD}/Shinobi/plugins:/home/Shinobi/plugins
+       - /dev/shm/Shinobi/streams:/dev/shm/streams
+       - /etc/localtime:/etc/localtime:ro
