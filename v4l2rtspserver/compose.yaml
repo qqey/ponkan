@@ -4,11 +4,11 @@ services:
     image: mpromonet/v4l2tools
     container_name: v4l2tools
     devices:
-      - /dev/video0
+      - /dev/video1
       - /dev/video10
     command: 
       - -fH264
-      - /dev/video0
+      - /dev/video1
       - /dev/video10
     restart: unless-stopped
   v4l2rtspserver:
