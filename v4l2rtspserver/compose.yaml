@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  v4l2tools:
+    image: mpromonet/v4l2tools
+    container_name: v4l2tools
+    devices:
+      - /dev/video0
+      - /dev/video10
+    command: 
+      - -fH264
+      - /dev/video0
+      - /dev/video10
+    restart: unless-stopped
+  v4l2rtspserver:
+    image: mpromonet/v4l2rtspserver
+    container_name: v4l2rtspserver
+    ports:
+      - 8554:8554
+    devices:
+      - /dev/video10
+    entrypoint: "/bin/sh -c 'sleep 3 && /usr/local/bin/v4l2rtspserver /dev/video10'"
+    depends_on: 
+      - v4l2tools
