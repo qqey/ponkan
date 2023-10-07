@@ -10,6 +10,8 @@ services:
       - 5555:5555/tcp
     container_name: softether-server
     environment:
-      - USERNAME=hihumikan
+      - USERNAME=vpnuser
       - PASSWORD=vpnpassword
+      - SPW=vpnserverpassword
       - PSK=vpnsecret
+      - HPW=vpnhubpassword
