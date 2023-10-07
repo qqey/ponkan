@@ -9,8 +9,6 @@ services:
       - 1701:1701/tcp
       - 5555:5555/tcp
     container_name: softether-server
-    volumes:
-      - ./vpn_server.config:/usr/vpnserver/vpn_server.config:z
     environment:
       - USERNAME=vpnuser
       - PASSWORD=vpnpassword
